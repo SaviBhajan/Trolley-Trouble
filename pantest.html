@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+  <body>
+   <a-scene>
+   <a-assets>
+   <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+   <a-asset-item id="chair" src="train.dae"></a-asset-item>
+   <a-asset-item id="tile" src="tile.dae"></a-asset-item>
+   <a-asset-item id="desk" src="tr1.dae"></a-asset-item>
+  </a-assets>
+  <a-sky src="#skyTexture"></a-sky>
+  <a-entity collada-model="#chair" position = "-1.5 1 0"></a-entity>
+  <a-entity collada-model="#desk" position = "2 0 0"></a-entity>
+
+
+  <a-plane color = "green" rotation="-90 0 0" width="14" height="14"  repeat="10 10"></a-plane>
+
+  <!--Tiles-->
+   <a-entity collada-model="#tile" position = "0 0 0"></a-entity>
+  
+</a-scene>
+  </body>
+</html>
