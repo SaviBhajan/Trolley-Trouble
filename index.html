@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="ground" src="grass.jpg">
+            <a-asset-item id="cloud1" src="models/Cloud1/model.dae"></a-asset-item>
+            <a-asset-item id="cloud2" src="models/Cloud2/model.dae"></a-asset-item>
+            <a-asset-item id="cowboy" src="models/cowboy/model.dae"></a-asset-item>
+        </a-assets>
+
+
+        <a-camera wasd-controls-enabled="false">
+            <a-cursor color="#FFF"></a-cursor>
+        </a-camera>
+
+        <a-sky color="#7ec0ee"></a-sky>
+
+
+
+
+        <a-collada-model src="#cloud1" position="0 10 0"></a-collada-model>
+        <a-collada-model src="#cloud2" position="5 10 0"></a-collada-model>
+
+        <a-plane src="#ground" rotation="-90 0 0" width="50" height="50" repeat="10 10"></a-plane>
+
+
+
+
+
+    </a-scene>
+</body>
+
+</html>
