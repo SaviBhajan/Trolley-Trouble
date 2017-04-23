@@ -14,19 +14,19 @@
             <a-asset-item id="cloud4" src="models/clouds/cloud2.dae"></a-asset-item>
             <a-asset-item id="tree" src="models/Trees/model.dae"></a-asset-item>
             <a-asset-item id="train" src="models/train.dae"></a-asset-item>
-            <a-asset-item id="rail1" src="models/tracks_obj/rail_straight.obj"></a-asset-item>
-            <a-asset-item id="rail2" src="models/tracks_obj/rail_straight.obj.mtl"></a-asset-item>
+            <a-asset-item id="track1" src="models/tracks_obj/rail_straight.obj"></a-asset-item>
+            <a-asset-item id="track2" src="models/tracks_obj/rail_straight.obj.mtl"></a-asset-item>
+            
+            <a-asset-item id="elder" src="models/people/male4/model.dae"></a-asset-item>
         </a-assets>
-
 
         <a-camera look-controls wasd-controls-enabled="false">
             <a-cursor color="#FFF"></a-cursor>
         </a-camera>
 
         <a-sky color="#7ec0ee"></a-sky>
-        <a-plane src="#ground" rotation="-90 0 0" width="70" height="50" repeat="10 10"></a-plane>
-
-
+        <a-plane src="#ground" rotation="-90 0 0" width="100" height="60" repeat="10 10"></a-plane>
+        
         <a-collada-model src="#cloud1" position="10 30 -50"></a-collada-model>
         <a-collada-model src="#cloud1" position="30 50 -60"></a-collada-model>
         <a-collada-model src="#cloud2" position="-60 30 -50"></a-collada-model>
@@ -35,18 +35,50 @@
         <a-collada-model src="#cloud3" position="50 50 5"></a-collada-model>
         <a-collada-model src="#cloud3" position="40 50 50"></a-collada-model>
         <a-collada-model src="#cloud4" position="-200 200 60" rotation="0 90 0"></a-collada-model>
-
-        <a-collada-model src="#tree" position="-3 1 4"></a-collada-model>
+        
+        <a-collada-model src="#tree" position="-11.5 1 4" rotation="0 20 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-10.5 1 4" rotation="0 20 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-9.5 1 4" rotation="0 20 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-8.6 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-7.5 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-6.2 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-5 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-5 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-4 1 4" rotation="0 30 0"></a-collada-model>
+        <a-collada-model src="#tree" position="-3 1 4" rotation="0 40 0"></a-collada-model>
         <a-collada-model src="#tree" position="-2 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="-1 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="0 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="1 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="2 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="3 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="4.2 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="5.6 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="7 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="8.4 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="9.7 1 4"></a-collada-model>
+        <a-collada-model src="#tree" position="10.9 1 4"></a-collada-model>
+
         
-        <a-collada-model src="#train" position="-30 -0.5 -3" rotation="0 90 0"></a-collada-model>
-        <a-obj-model src="#rail1" mtl="#rail2" position="-25 0 -5.2" rotation="0 90 0"></a-obj-model>
-   
+        <a-collada-model src="#train" position="-35 -0.5 -3" rotation="0 90 0"></a-collada-model>
+        <a-obj-model src="#track1" mtl="#track2" position="-40 0 -5.2" rotation="0 90 0"></a-obj-model>
+        <a-obj-model src="#track1" mtl="#track2" position="-20.5 0 -5.2" rotation="0 90 0"></a-obj-model>
+        
+        <!-- go straight -->
+        <a-obj-model src="#track1" mtl="#track2" position="-1 0 -5.2" rotation="0 90 0"></a-obj-model>
+        <a-obj-model src="#track1" mtl="#track2" position="19.2 0 -5.2" rotation="0 90 0"></a-obj-model>
+        <a-obj-model src="#track1" mtl="#track2" position="39.5 0 -5.2" rotation="0 90 0"></a-obj-model>
+        <!-- branch-->
+        <a-obj-model src="#track1" mtl="#track2" position="2 0 -7" rotation="0 100 0"></a-obj-model>
+        <a-obj-model src="#track1" mtl="#track2" position="21.9 0 -10.5" rotation="0 100 0"></a-obj-model>
+        <a-obj-model src="#track1" mtl="#track2" position="41.8 0 -14" rotation="0 100 0"></a-obj-model>
+        
+        <!-- people -->
+        <a-collada-model src="#elder" position="-2 0 -1"></a-collada-model>
+        
+        
+        
+        
     </a-scene>
 </body>
 
