@@ -20,6 +20,7 @@
             <a-asset-item id="track1" src="models/tracks_obj/rail_straight.obj"></a-asset-item>
             <a-asset-item id="track2" src="models/tracks_obj/rail_straight.obj.mtl"></a-asset-item>
             <a-asset-item id="grass" src="model.dae"></a-asset-item>
+            <a-asset-item id="lever" src="lever.dae"></a-asset-item>
             
             <a-asset-item id="elder" src="models/people/set.dae"></a-asset-item>
         </a-assets>
@@ -71,10 +72,8 @@
           text="value: This text will be 4 units wide.">
         </a-entity>-->
 
-         <a-entity collada-model="#grass" position="-45 -0.5 -3"></a-entity>
-            
-        <a-text value="Trouble Trolley" position= "-0.02 1.8 -3"></a-text>
-        
+        <a-text value="Trouble Trolley" position= "-0.02 1.8 -1"></a-text>
+        <a-entity collada-model="#lever" position= "0 0 -1.5" rotation = "0 -45 0"></a-entity>
         
         <a-entity collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
               <a-animation attribute="position" dur = "10000" from="-45 -0.5 -3" to="30 -0.5 -3" ease = "linear"></a-animation>
