@@ -6,8 +6,6 @@
 </head>
 
 <body>
-    
-    
     <a-scene fog="type: linear; color: #AAA; far: 70">
         <a-assets>
             <img id="ground" src="grass.jpg">
@@ -23,7 +21,9 @@
             <a-asset-item id="lever" src="lever.dae"></a-asset-item>
             <a-asset-item id="gravel" src="gravel.jpg"></a-asset-item>
             
-            <a-asset-item id="elder" src="models/people/set.dae"></a-asset-item>
+            <a-asset-item id="people1" src="models/people/set.dae"></a-asset-item>
+            <a-asset-item id="people2" src="models/people/dogman/model.dae"></a-asset-item>
+            <a-asset-item id="people3" src="models/people/male1.dae"></a-asset-item>
         </a-assets>
 
         <a-camera look-controls wasd-controls-enabled="false">
@@ -32,7 +32,7 @@
 
         <a-sky color="#7ec0ee"></a-sky>
         <a-plane src="#ground" rotation="-90 0 0" width="100" height="60" repeat="20 20"></a-plane>
-        <a-plane src="#gravel" rotation="-90 90 0" width="100" height="60" repeat="1 5" scale = "0.1 2 1" position = "0 0.02 -5.8"></a-plane>
+        <a-plane src="#gravel" rotation="-90 90 0" width="150" height="50" repeat="1 5" scale = "0.1 2 1" position = "0 0.02 -10.5"></a-plane>
         
         
          <!--<a-entity collada-model="#grass" position= "-5 0 2" scale = "0.02 0.01 0.01" repeat="10 10"></a-entity>-->
@@ -77,13 +77,12 @@
         </a-entity>-->
 
         <a-text value="Trouble Trolley" position= "-0.02 1.8 -1"></a-text>
-        <a-entity collada-model="#lever" position= "0 0 -1.5" rotation = "0 -45 0"></a-entity>
+        <a-entity collada-model="#lever" position= "0 0 -1" rotation = "0 0 0"></a-entity>
         
         <a-entity collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-              <a-animation attribute="position" dur = "10000" from="-45 -0.5 -3" to="30 -0.5 -3" ease = "linear"></a-animation>
+              <a-animation attribute="position" dur = "10000" from="-50 -0.5 -3" to="50 -0.5 -3" ease = "linear"></a-animation>
         </a-entity>
-        
-        
+                
         <a-animation attribute="position" to="0 0 0" fill="forwards"></a-animation>
         <a-obj-model src="#track1" mtl="#track2" position="-40 0 -5.2" rotation="0 90 0"></a-obj-model>
         <a-obj-model src="#track1" mtl="#track2" position="-20.5 0 -5.2" rotation="0 90 0"></a-obj-model>
@@ -98,8 +97,9 @@
         <a-obj-model src="#track1" mtl="#track2" position="41.8 0 -14" rotation="0 100 0"></a-obj-model>
         
         <!-- people -->
-        <a-collada-model src="#elder" position="-2 0 -5" rotation = "0 0 90"></a-collada-model>
-        
+        <a-collada-model src="#people1" position="20 0 -4.5" rotation="0 180 0"></a-collada-model>
+        <a-collada-model src="#people2" position="13 0 -5" rotation="0 -60 0"></a-collada-model>
+        <a-collada-model src="#people3" position="14 0 -9" rotation="0 100 0"></a-collada-model>
     </a-scene>
 </body>
 
