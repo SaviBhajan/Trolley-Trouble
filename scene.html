@@ -19,6 +19,7 @@
             <a-asset-item id="track2" src="models/tracks_obj/rail_straight.obj.mtl"></a-asset-item>
             <a-asset-item id="grass" src="good-grass.dae"></a-asset-item>
             <a-asset-item id="lever" src="lever.dae"></a-asset-item>
+            <a-asset-item id="lever2" src="lever2.dae"></a-asset-item>
             <a-asset-item id="gravel" src="gravel.jpg"></a-asset-item>
 
             <a-asset-item id="people1" src="models/people/set.dae"></a-asset-item>
@@ -26,9 +27,15 @@
             <a-asset-item id="people3" src="models/people/male1.dae"></a-asset-item>
         </a-assets>
 
-        <a-camera look-controls wasd-controls-enabled="false">
-            <a-cursor color="#FFF"></a-cursor>
+        <a-camera look-controls stereocam="eye:left;">
+            <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #FFF">
+                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+
+                <a-animation begin="mouseleave" easing="ease-in" attribute="scale" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            </a-entity>
         </a-camera>
+    
 
         <a-sky color="#7ec0ee"></a-sky>
         <a-plane src="#ground" rotation="-90 0 0" width="100" height="60" repeat="20 20"></a-plane>
@@ -78,11 +85,19 @@
         </a-entity>-->
 
         <a-text value="Trouble Trolley" position="-0.02 1.8 -1"></a-text>
-        <a-entity collada-model="#lever" position="0 0 -1" rotation="0 0 0"></a-entity>
+        
+        <a-entity collada-model="#lever" class = "lever" position="0 0 -1" rotation="0 0 0" onclick= "make()"></a-entity>
 
-        <a-entity collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-            <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="50 -0.5 -3" ease="linear"></a-animation>
+        <!-- Train1 ---------------------------------------------------------------------------->
+        <a-entity collada-model="#train" class = "train1" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
+        <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="50 -0.5 -3" ease="linear"></a-animation>
         </a-entity>
+        
+         <!-- Train2 ---------------------------------------------------------------------------->
+        <a-entity visible="false" class = "train2" collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
+        <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="0.5 -0.5 -3" ease="linear"></a-animation>
+        </a-entity>
+        
 
         <a-animation attribute="position" to="0 0 0" fill="forwards"></a-animation>
         <a-obj-model src="#track1" mtl="#track2" position="-40 0 -5.2" rotation="0 90 0"></a-obj-model>
@@ -102,6 +117,29 @@
         <a-collada-model src="#people2" position="12 0 -5" rotation="0 -60 0"></a-collada-model>
         <a-collada-model src="#people3" position="14 0 -2.5" rotation="0 75 0"></a-collada-model>
     </a-scene>
+    
+    <script>
+    function switchTracks(switched) {
+        if(switched){
+            var scene = document.querySelector('a-scene');
+            var getT1 = scene.getElementsByClassName("train1");
+            getT1[0].setAttribute("visible", false);
+            var getT2 = scene.getElementsByClassName("train2");
+            getT2[0].setAttribute("visible", true);           
+        }
+    }
+        
+    function make(){
+        var scene = document.querySelector('a-scene');
+        var getLever = scene.getElementsByClassName("lever");
+        getLever[0].setAttribute("collada-model", "lever2.dae");
+
+        var switched = true; 
+        switchTracks(switched);
+        }
+   </script>
+    
+    
 </body>
 
 </html>

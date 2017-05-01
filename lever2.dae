@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-05-01T14:08:47</created>
-    <modified>2017-05-01T14:08:47</modified>
+    <created>2017-04-30T17:51:49</created>
+    <modified>2017-04-30T17:51:49</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -594,11 +594,11 @@
         <node id="AnimeHandle" name="AnimeHandle" type="NODE">
           <translate sid="location">0 0 0</translate>
           <rotate sid="rotationZ">0 0 1 0</rotate>
-          <rotate sid="rotationY">0 1 0 30</rotate>
+          <rotate sid="rotationY">0 1 0 -30</rotate>
           <rotate sid="rotationX">1 0 0 0</rotate>
           <scale sid="scale">1 1 1</scale>
           <node id="Handle" name="Handle" type="NODE">
-            <translate sid="location">-1.90735e-6 0 40.4031</translate>
+            <translate sid="location">1.90735e-6 0 40.4031</translate>
             <rotate sid="rotationZ">0 0 1 0</rotate>
             <rotate sid="rotationY">0 1 0 0</rotate>
             <rotate sid="rotationX">1 0 0 0</rotate>
