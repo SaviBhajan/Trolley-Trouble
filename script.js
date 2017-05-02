@@ -7,4 +7,11 @@ $(function () {
     $("#button").on("fusing", function () {
         document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
     })
+    
+     $("#lev").on("fusing", function () {
+        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
+    })
+     $("#lev").on("fusing", function () {
+        document.querySelector('a-scene').querySelector('#cursor').emit("click");
+    })
 })

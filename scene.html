@@ -3,6 +3,9 @@
 <head>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src='/three.js'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="script.js"></script>
+    
 </head>
 
 <body>
@@ -27,12 +30,10 @@
             <a-asset-item id="people3" src="models/people/male1.dae"></a-asset-item>
         </a-assets>
 
-        <a-camera look-controls stereocam="eye:left;">
-            <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #FFF">
-                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
-
-                <a-animation begin="mouseleave" easing="ease-in" attribute="scale" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+        <a-camera look-controls wasd-controls-enabled="false">
+            <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 0.0015; radiusOuter: 0.0025" material="color: red; shader: flat">
+                <a-animation begin="Fuse" easing="ease-in" dur="1000" attribute="scale" fill="none" to="0.1 0.1 0.1"></a-animation>
+                <a-animation begin="click" easing="ease-in" dur="1000" attribute="scale" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
             </a-entity>
         </a-camera>
     
@@ -86,7 +87,7 @@
 
         <a-text value="Trouble Trolley" position="-0.02 1.8 -1"></a-text>
         
-        <a-entity collada-model="#lever" class = "lever" position="0 0 -1" rotation="0 0 0" onclick= "make()"></a-entity>
+        <a-entity collada-model="#lever" id = "lev" class = "lever" position="0 0 -1" rotation="0 0 0" onclick= "make()"></a-entity>
 
         <!-- Train1 ---------------------------------------------------------------------------->
         <a-entity collada-model="#train" class = "train1" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
