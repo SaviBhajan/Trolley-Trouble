@@ -5,7 +5,7 @@
     <script src='/three.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
-    
+
 </head>
 
 <body>
@@ -33,12 +33,13 @@
         <a-camera look-controls wasd-controls-enabled="false">
             <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 0.0015; radiusOuter: 0.0025" material="color: red; shader: flat">
                 <a-animation begin="Fuse" easing="ease-in" dur="1000" attribute="scale" fill="none" to="0.1 0.1 0.1"></a-animation>
-                <a-animation begin="click" easing="ease-in" dur="1000" attribute="scale" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+                <a-animation begin="Click" easing="ease-in" dur="1000" attribute="scale" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
             </a-entity>
         </a-camera>
-    
+
 
         <a-sky color="#7ec0ee"></a-sky>
+        <a-text value="Gaze at the lever to pull. Once." position="0 0 0"></a-text>
         <a-plane src="#ground" rotation="-90 0 0" width="100" height="60" repeat="20 20"></a-plane>
         <a-plane src="#gravel" rotation="-90 90 0" width="50" height="50" scale="0.1 2 1" position="0 0.02 -5" repeat="1 50"></a-plane>
         <a-plane src="#gravel" rotation="-90 80 0" width="35" height="28" scale="0.1 2 1" position="22 0.1 -1" repeat="1 50"></a-plane>
@@ -78,27 +79,20 @@
         <a-collada-model src="#tree" position="9.7 1 4"></a-collada-model>
         <a-collada-model src="#tree" position="10.9 1 4"></a-collada-model>
 
-        <!-- <a-entity
-          geometry="primitive: plane; width: 1; height: 1"
-          material="color: black"
-          position= "-0.02 1 -1"
-          text="value: This text will be 4 units wide.">
-        </a-entity>-->
-
         <a-text value="Trouble Trolley" position="-0.02 1.8 -1"></a-text>
-        
-        <a-entity collada-model="#lever" id = "lev" class = "lever" position="0 0 -1" rotation="0 0 0" onclick= "make()"></a-entity>
+
+        <a-entity collada-model="#lever" id="lev" class="lever" position="0 0 -1" rotation="0 0 0" onclick="make()"></a-entity>
 
         <!-- Train1 ---------------------------------------------------------------------------->
-        <a-entity collada-model="#train" class = "train1" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-        <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="50 -0.5 -3" ease="linear"></a-animation>
+        <a-entity collada-model="#train" class="train1" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
+            <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="50 -0.5 -3" ease="linear"></a-animation>
         </a-entity>
-        
-         <!-- Train2 ---------------------------------------------------------------------------->
-        <a-entity visible="false" class = "train2" collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-        <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="0.5 -0.5 -3" ease="linear"></a-animation>
+
+        <!-- Train2 ---------------------------------------------------------------------------->
+        <a-entity visible="false" class="train2" collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
+            <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="0.5 -0.5 -3" ease="linear"></a-animation>
         </a-entity>
-        
+
 
         <a-animation attribute="position" to="0 0 0" fill="forwards"></a-animation>
         <a-obj-model src="#track1" mtl="#track2" position="-40 0 -5.2" rotation="0 90 0"></a-obj-model>
@@ -118,29 +112,8 @@
         <a-collada-model src="#people2" position="12 0 -5" rotation="0 -60 0"></a-collada-model>
         <a-collada-model src="#people3" position="14 0 -2.5" rotation="0 75 0"></a-collada-model>
     </a-scene>
-    
-    <script>
-    function switchTracks(switched) {
-        if(switched){
-            var scene = document.querySelector('a-scene');
-            var getT1 = scene.getElementsByClassName("train1");
-            getT1[0].setAttribute("visible", false);
-            var getT2 = scene.getElementsByClassName("train2");
-            getT2[0].setAttribute("visible", true);           
-        }
-    }
-        
-    function make(){
-        var scene = document.querySelector('a-scene');
-        var getLever = scene.getElementsByClassName("lever");
-        getLever[0].setAttribute("collada-model", "lever2.dae");
 
-        var switched = true; 
-        switchTracks(switched);
-        }
-   </script>
-    
-    
+
 </body>
 
 </html>
