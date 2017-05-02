@@ -2,7 +2,6 @@
 
 <head>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src='/three.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
 
@@ -24,6 +23,7 @@
             <a-asset-item id="lever" src="lever.dae"></a-asset-item>
             <a-asset-item id="lever2" src="lever2.dae"></a-asset-item>
             <a-asset-item id="gravel" src="gravel.jpg"></a-asset-item>
+            <audio id = "trainSound" src = "sound/train.wav" preload="auto"></audio>
 
             <a-asset-item id="people1" src="models/people/set.dae"></a-asset-item>
             <a-asset-item id="people2" src="models/people/dogman/model.dae"></a-asset-item>
@@ -40,7 +40,7 @@
 
         <a-sky color="#7ec0ee"></a-sky>
         <a-text value="Gaze at the lever to pull. Once." position="0 0 0"></a-text>
-        
+        <a-sound src = "src: #trainSound" autoplay = "true"></a-sound>
         <!-- Ground -->
         <a-sky color="#7ec0ee"></a-sky>
         <a-plane src="#ground" rotation="-90 0 0" width="100" height="60" repeat="20 20"></a-plane>
@@ -95,12 +95,12 @@
 
         <!-- Train1 ---------------------------------------------------------------------------->
         <a-entity collada-model="#train" class="train1" position="-500 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-            <a-animation attribute="position" dur="100000" from="-500 -0.5 -3" to="50 -0.5 -3" ease="linear"></a-animation>
+            <a-animation attribute="position" dur="30000" from="-500 -0.5 -3" to="50 -0.5 -3" ></a-animation>
         </a-entity>
 
         <!-- Train2 ---------------------------------------------------------------------------->
         <a-entity visible="false" class="train2" collada-model="#train" position="-45 -0.5 -3" rotation="0 90 0" animation="dir: normal">
-            <a-animation attribute="position" dur="10000" from="-50 -0.5 -3" to="0.5 -0.5 -3" ease="linear"></a-animation>
+            <a-animation attribute="position" dur="10000" from="-500 -0.5 -3" to="0.5 -0.5 -3" ease="linear"></a-animation>
         </a-entity>
 
 
